@@ -25,3 +25,10 @@ endif (PkgConfig_FOUND)
 set(SOURCE_FILES main.cpp MediaFormat.cpp MediaInput.cpp MediaRender.cpp MediaUtils.cpp MediaUtils.h MediaFrame.cpp MediaFrame.h MediaFrameAvailableListener.cpp MediaFrameAvailableListener.h)
 add_executable(SimpleFFPlayer ${SOURCE_FILES})
 target_link_libraries(SimpleFFPlayer "pthread")
+
+# audio player example
+file(GLOB AUDIO_PLAYER_SOURCE_FILES
+        ${PROJECT_SOURCE_DIR}/audioplayer/*.h
+        ${PROJECT_SOURCE_DIR}/audioplayer/*.cpp)
+add_executable(audioplayer ${AUDIO_PLAYER_SOURCE_FILES})
+target_link_libraries(audioplayer "pthread")
